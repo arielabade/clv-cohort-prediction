@@ -1,0 +1,22 @@
+{
+  "horizon_days": 183,
+  "calibration_end": "2011-06-09",
+  "holdout_end": "2011-12-09",
+  "customers_total": 4969,
+  "customers_train": 3478,
+  "customers_test": 1491,
+  "repeat_rate": 0.673374924532099,
+  "holdout_active_rate": 0.5217974513749162,
+  "bgnbd": {
+    "mae": 484.07428155783447,
+    "rmse": 1126.860461591177,
+    "bias": -18.016040539532096,
+    "spearman": 0.6009602188852177
+  },
+  "lightgbm": {
+    "mae": 645.0235960968588,
+    "rmse": 1789.7597851344992,
+    "bias": 139.79973961968457,
+    "spearman": 0.4852477700721578
+  }
+}
