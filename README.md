@@ -1,9 +1,4 @@
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/brand/header-dark.svg">
-    <img alt="CLV Cohort Prediction: BG/NBD + Gamma-Gamma against LightGBM on a six-month holdout" src="assets/brand/header-light.svg" width="100%">
-  </picture>
-</p>
+<p align="center"><img alt="CLV Cohort Prediction: BG/NBD + Gamma-Gamma against LightGBM on a six-month holdout" src="assets/brand/header.svg" width="100%"></p>
 
 <p align="center">
   <img alt="Method stage: retain" src="https://img.shields.io/badge/stage-retain-5B6CFF?style=flat-square&labelColor=050505">
@@ -16,19 +11,9 @@
 same budget aimed with gradient boosting reaches 42.8%, and LightGBM's lowest-ranked decile turns out
 to be worth more than its middle ones.
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/brand/kpis-dark.svg">
-    <img alt="Top decile captures 51.2% of holdout value; MAE £484 vs £645; Spearman 0.601 vs 0.485" src="assets/brand/kpis-light.svg" width="100%">
-  </picture>
-</p>
+<p align="center"><img alt="Top decile captures 51.2% of holdout value; MAE £484 vs £645; Spearman 0.601 vs 0.485" src="assets/brand/kpis.svg" width="100%"></p>
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/brand/arc-dark.svg">
-    <img alt="Context, problem, strategy and result of the case" src="assets/brand/arc-light.svg" width="100%">
-  </picture>
-</p>
+<p align="center"><img alt="Context, problem, strategy and result of the case" src="assets/brand/arc.svg" width="100%"></p>
 
 ---
 
@@ -94,12 +79,7 @@ T          days from first purchase to the end of calibration
 
 ## 04 — Result
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/brand/chart-dark.svg">
-    <img alt="Decile lift: BG/NBD falls monotonically from 5.09x to 0.12x; LightGBM's bottom decile is 0.64x" src="assets/brand/chart-light.svg" width="100%">
-  </picture>
-</p>
+<p align="center"><img alt="Decile lift: BG/NBD falls monotonically from 5.09x to 0.12x; LightGBM's bottom decile is 0.64x" src="assets/brand/chart.svg" width="100%"></p>
 
 **The probabilistic model beats gradient boosting on every measure**, on customers neither model saw:
 
@@ -161,12 +141,7 @@ notebooks/  retention exploration
 
 ---
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/brand/track-dark.svg">
-    <img alt="ABADE method: validate, scale, retain, build. This repository: retain" src="assets/brand/track-light.svg" width="100%">
-  </picture>
-</p>
+<p align="center"><img alt="ABADE method: validate, scale, retain, build. This repository: retain" src="assets/brand/track.svg" width="100%"></p>
 
 <p align="center">
   <a href="https://github.com/arielabade">Portfolio</a> &nbsp;·&nbsp;
