@@ -11,7 +11,29 @@
 same budget aimed with gradient boosting reaches 42.8%, and LightGBM's lowest-ranked decile turns out
 to be worth more than its middle ones.
 
-<p align="center"><img alt="Top decile captures 51.2% of holdout value; MAE £484 vs £645; Spearman 0.601 vs 0.485" src="assets/brand/kpis.svg" width="100%"></p>
+<p align="center"><img alt="Top predicted decile captures 51.2% of holdout value; MAE £484 against £645; Spearman 0.601 against 0.485" src="assets/figures/headline.svg" width="100%"></p>
+
+<p align="center"><img alt="Actual holdout value by predicted decile: BG/NBD reaches 5.1x on the top decile against LightGBM's 4.3x, and LightGBM's bottom decile outranks its middle ones" src="assets/figures/decile_lift.svg" width="100%"></p>
+
+> **Decision.** Rank the retention list with BG/NBD + Gamma-Gamma. On a programme priced per contact, the top decile is where the budget goes, and that is exactly where gradient boosting is weakest.
+
+<details>
+<summary><b>What is in this repository</b></summary>
+
+| | |
+| --- | --- |
+| **The question** | Who deserves retention budget, predicted before the money is spent? |
+| **The data** | Online Retail II, 4,969 customers, split by date rather than at random — a random split would train on a customer's future and score it on their past. |
+| **The method** | BG/NBD + Gamma-Gamma against LightGBM, scored on a six-month holdout neither model saw. |
+| **The finding** | The probabilistic model wins on every metric, and wins most where it matters commercially. |
+
+```
+src/clv/    cohorts, RFM, the two models, evaluation, figures
+reports/    cohort retention matrix, decile tables, holdout metrics
+tests/      the RFM construction, the split, and the evaluation maths
+```
+
+</details>
 
 <p align="center"><img alt="Context, problem, strategy and result of the case" src="assets/brand/arc.svg" width="100%"></p>
 
@@ -75,11 +97,23 @@ recency    age at last purchase, NOT days since last purchase   ← pinned by a 
 T          days from first purchase to the end of calibration
 ```
 
+```mermaid
+flowchart LR
+  A["Online Retail II<br/>row count asserted"] --> B["clean: drop cancellations,<br/>require customer id"]
+  B --> C["split by DATE<br/>calibration / holdout"]
+  C --> D["RFM per customer"]
+  D --> E["BG/NBD + Gamma-Gamma"]
+  D --> F["LightGBM"]
+  E --> G["score the 183-day holdout"]
+  F --> G
+  G --> H["reports/ + README figures"]
+  C -.->|"a random split would train<br/>on a customer's future"| X(["rejected by design"])
+```
+
 ---
 
 ## 04 — Result
 
-<p align="center"><img alt="Decile lift: BG/NBD falls monotonically from 5.09x to 0.12x; LightGBM's bottom decile is 0.64x" src="assets/brand/chart.svg" width="100%"></p>
 
 **The probabilistic model beats gradient boosting on every measure**, on customers neither model saw:
 
@@ -97,6 +131,12 @@ tail. The tail is where the money is.
 
 > **Decision.** Rank the retention list with BG/NBD + Gamma-Gamma. On a programme priced per contact,
 > the gap between 51.2% and 42.8% of value reached is the entire business case.
+
+---
+
+<p align="center"><img alt="Cumulative share of future value reached as more of the base is contacted, best first" src="assets/figures/value_capture.svg" width="100%"></p>
+
+<p align="center"><img alt="Monthly retention by acquisition cohort" src="assets/figures/cohort_retention.svg" width="100%"></p>
 
 ---
 
